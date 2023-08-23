@@ -8,7 +8,9 @@ const app = express();
 
 // Serve front end assets which have been built by webpack
 app.use("/static", express.static(STATIC_ASSETS_PATH));
-
+app.get('/', function (req, res) {
+	res.send('hello')
+  });
 app.get("/", (request, response) => {
 	response.send(`
 <!DOCTYPE html>
